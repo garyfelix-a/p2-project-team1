@@ -19,7 +19,7 @@ Build a scalable ETL pipeline to process, clean, and analyze sales data from 8 c
 - **Currency normalization**: All prices are converted to INR
 
 ## Architecture Diagram
-![ETL Pipeline](diagrams/etl-pipeline-architecture.png)
+![etl-pipeline-architecture](https://github.com/user-attachments/assets/c6795507-8576-4f93-b7c7-34d72c7ddb96)
 
 ## ETL Pipeline Steps
 1. **Extract**: Load data from various formats and sources
