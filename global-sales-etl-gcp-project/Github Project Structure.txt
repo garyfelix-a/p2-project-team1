@@ -1,0 +1,29 @@
+global-sales-etl-gcp-project/
+│
+├── data/
+│   ├── india_sales.sql
+│   ├── japan_sales.csv
+│   ├── norway_sales_postgres.sql
+│   ├── srilanka_sales.json
+│   ├── hongkong_sales.xlsx
+│   ├── oman_sales.sql
+│   ├── germany_sales.sql
+│   └── qatar_sales.sql
+│
+├── scripts/
+│   ├── etl_dataproc_pyspark.py
+│   └── currency_converter.py
+│
+├── diagrams/
+│   └── etl-pipeline-architecture.png
+│
+├── dashboards/
+│   ├── stakeholder_a_report.csv
+│   ├── stakeholder_b_looker_report.link
+│   ├── stakeholder_c_tax_analysis.png
+│   └── misc_charts/
+│       ├── category_trend.png
+│       └── countrywise_sales.png
+│
+├── README.md
+└── .gitignore
