@@ -1,0 +1,30 @@
+CREATE OR REPLACE MODEL dataproc1-457706.newdataset.sales_qty_forecast_model
+OPTIONS(
+  model_type='LINEAR_REG',
+  input_label_cols=['Qty']
+) AS
+SELECT
+  Category,    -- Categorical variable: product category
+  Product,     -- Categorical variable: product
+  INR_Amount,  -- Numeric feature: INR amount
+  Year,        -- New numeric feature: year
+  Qty          -- Target variable: quantity of products sold
+FROM
+  dataproc1-457706.newdataset.mytable;
+SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL dataproc1-457706.newdataset.sales_qty_forecast_model);
+  SELECT
+  Category,
+  Product,
+  INR_Amount,
+  Year,
+  predicted_qty
+FROM
+  ML.PREDICT(MODEL dataproc1-457706.newdataset.sales_qty_forecast_model,
+    (SELECT
+     "Shoes" AS Category,
+     "Adidas Shoes" AS Product,
+     100000 AS INR_Amount,
+     2025 AS Year)) AS forecast;
